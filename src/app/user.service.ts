@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
 
-  constructor() { }
+  private _url:string = './assets/data.json';
+  constructor(private _http:Http) { }
   checkusernameandpassword(uname: string, pwd : string)
   {
     if(uname == "admin" && pwd =="admin123"){
@@ -23,4 +26,11 @@ export class UserService {
   isChildRights():boolean{
     return false;
   }
+
+  getData(){
+    return this._http.get(this._url)
+    .map((response:Response) => response.json());
+    //.map(res => res.json());
+  }
 }
+
