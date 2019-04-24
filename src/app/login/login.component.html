@@ -1,0 +1,25 @@
+<!-- <div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" [(ngModel)]="uname" placeholder="Enter Username" name="uname" required>
+
+  <label for="psw"><b>Password</b></label>
+  <input type="password" [(ngModel)]="psw" placeholder="Enter Password" name="psw" required>
+    
+  <button type="submit" (click) = "submit()">Submit</button>
+  <br>
+  <div [style.color]='mycolor'>{{msg}}</div>
+</div>
+ -->
+ <p>
+  login works!
+</p>
+<div class="container">
+  <label for="uname"><b>Username</b></label>
+  <input type="text" #u1 placeholder="Enter Username" >
+
+  <label for="pwd"><b>Password</b></label>
+  <input type="password" #p2 placeholder="Enter Password">
+    
+  <button type="submit" (click) = "submit(u1.value, p2.value)">Submit</button>
+  <span>{{ msg }}</span>
+</div>
