@@ -7,6 +7,8 @@ export class UserService {
 
   private _url:string = './assets/data.json';
   constructor(private _http:Http) { }
+
+  // check login authentication
   checkusernameandpassword(uname: string, pwd : string)
   {
     if(uname == "admin" && pwd =="admin123"){
@@ -27,6 +29,7 @@ export class UserService {
     return false;
   }
 
+ // get data from json file
   getData(){
     return this._http.get(this._url)
     .map((response:Response) => response.json());
